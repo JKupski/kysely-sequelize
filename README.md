@@ -388,7 +388,7 @@ async function getKysely(): Promise<Kysely<Database>> {
     dialect: new KyselySequelizeDialect({
       // kysely-sequelize also supports MySQL, SQLite, and MS SQL Server.
       kyselyDialect: {
-        createAdapter: () => PostgresAdapter(),
+        createAdapter: () => new PostgresAdapter(),
         createIntrospector: (db) => new PostgresIntrospector(db),
         createQueryCompiler: () => new PostgresQueryCompiler(),
       },
